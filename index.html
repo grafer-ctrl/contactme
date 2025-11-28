@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f9fc; /* Sedikit abu-abu agar form putih terlihat menonjol */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container Form */
+        .contact-container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Shadow halus modern */
+            transition: transform 0.3s ease;
+        }
+
+        .contact-container:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Typography */
+        .contact-header h2 {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+
+        .contact-header p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4a5568;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #2d3748;
+            background-color: #fff;
+            transition: all 0.3s ease;
+            outline: none;
+            font-family: inherit;
+        }
+
+        /* Input Focus State */
+        input:focus, textarea:focus {
+            border-color: #3b82f6; /* Warna biru modern saat diklik */
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        textarea {
+            resize: vertical; /* User bisa tarik ke bawah saja */
+            min-height: 120px;
+        }
+
+        /* Button Style */
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background-color: #1a202c; /* Hitam soft/Dark Slate */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #000000;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 480px) {
+            .contact-container {
+                padding: 25px;
+            }
+            .contact-header h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-container">
+        <div class="contact-header">
+            <h2>Hubungi Saya</h2>
+            <p>Silakan isi formulir di bawah ini untuk mengirim pesan.</p>
+        </div>
+
+        <!-- 
+           Form Action mengarah ke FormSubmit dengan email Anda.
+           Method harus POST.
+        -->
+        <form action="https://formsubmit.co/umarsaid.radiografer@gmail.com" method="POST">
+            
+            <!-- Konfigurasi Tambahan (Hidden) -->
+            <!-- _captcha: false (mematikan captcha gambar agar lebih clean) -->
+            <input type="hidden" name="_captcha" value="false">
+            <!-- _template: table (agar email yang masuk rapi) -->
+            <input type="hidden" name="_template" value="table">
+            <!-- _subject: Judul email yang masuk -->
+            <input type="hidden" name="_subject" value="Pesan Baru dari Website Radiografer">
+
+            <div class="form-group">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Alamat Email</label>
+                <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Pesan</label>
+                <textarea id="message" name="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Kirim Pesan</button>
+        </form>
+    </div>
+
+</body>
+</html>
